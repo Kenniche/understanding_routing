@@ -34,6 +34,12 @@ def repeater(num, text):
     return f"{text}<br>" * int(num)
 
 
+# SENSEI BONUS: Ensure that if the user types in any route other than the ones specified, they receive an error message saying "Sorry! No response. Try again."
+@app.errorhandler(404)
+def no_response(wrong):
+    return "Sorry! No response. Try again."
+
+
 
 if __name__=="__main__":   # Ensure this file is being run directly and not from a different module    
     app.run(debug=True)    # Run the app in debug mode.
